@@ -1,0 +1,1 @@
+start "" "C:\Program Files\Google\Chrome\Application\chrome.exe" --app=http://ip:8085/
