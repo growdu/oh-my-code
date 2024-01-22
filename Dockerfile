@@ -1,6 +1,6 @@
 FROM centos:centos7.6.1810
 
-MAINTAINER duanyingshou
+MAINTAINER growdu
 RUN yum install wget -y \
 && mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_bak \
 && wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo \
