@@ -3,9 +3,9 @@ services:
   # 服务名称
   dev:
     # 镜像:版本
-    image: ghcr.io/growdu/oh-my-code/coder:v1.1
+    image: ghcr.io/growdu/oh-my-code/coder:v1.4
     restart: always
-    container_name: oh-my-code
+    container_name: coder
     # 本地 8085 -> 容器 8080
     ports:
       - '8085:8080'
@@ -13,16 +13,18 @@ services:
       - '3000:3000'
       - '10000:10000'
       - '10024:10024'
+      - '10087:10087'
+      - '10088:10088'
+      - '10089:10089'
+      - '10090:10090'
       # 3000 ,10000,10024用于开发调试
     environment:
       - PASSWORD=coder
     # 数据卷 映射本地文件到容器
     volumes:
-      - /home/ha/work:/home/coder/
-      #- /fast1/oh-my-code:/home/coder/
       - ./entrypoint.sh:/usr/bin/entrypoint.sh
       - ./hosts:/etc/hosts
     working_dir: /home/coder/
     command: /usr/sbin/init
-    hostname: coder_in
+    hostname: coder
 
