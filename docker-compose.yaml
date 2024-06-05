@@ -3,7 +3,7 @@ services:
   # 服务名称
   dev:
     # 镜像:版本
-    image: ghcr.io/growdu/oh-my-code/coder:v1.5
+    image: ghcr.io/growdu/oh-my-code/coder:v1.6
     restart: always
     container_name: coder
     # 本地 8085 -> 容器 8080
@@ -24,7 +24,8 @@ services:
     volumes:
       - ./entrypoint.sh:/usr/bin/entrypoint.sh
       - ./hosts:/etc/hosts
-      - /home/ha/work:/home/coder/work
+      - ./code:/home/coder/work
+      - ./.ssh:/home/coder/.ssh
     cap_add:
       - NET_ADMIN
       - NET_RAW
